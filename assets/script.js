@@ -4,18 +4,17 @@ var time = questions.length * 15;
 var timerId;
 
 // variables assigned to reference DOM elements....................................
+var highScoreDisplay = document.querySelector("#the-highestscore-display-area");
+var initialsEl = document.querySelector("#initials");
+var feedbackEl = document.querySelector("#feedback");
+var questionsEl = document.querySelector("#question");
+var choicesEl = document.querySelector("#choices");
 var timeEl = document.querySelector("#time");
 var startBtn = document.querySelector("#startButton");
 var submitBtn = document.querySelector("#submit-button");
 var titleScreen = document.querySelector("#title-section");
 var quizScreen = document.querySelector("#quiz-section");
 var highScoreScreen = document.querySelector("#highscore-section");
-var highScoreDisplay = document.querySelector("#highscore-display-section");
-var initialsEl = document.querySelector("#initials");
-var feedbackEl = document.querySelector("#feedback");
-
-var questionsEl = document.querySelector("#question");
-var choicesEl = document.querySelector("#choices");
 
 
 //this is the function that will start the game
@@ -27,7 +26,7 @@ function startQuiz() {
     quizScreen.setAttribute("class", "show");
   
     // start timer
-    timerId = setInterval(tick, 1000);
+    window.console = timerId = setInterval(tick, 1000);
   
     // show starting time
     timeEl.textContent = time;
@@ -148,12 +147,12 @@ function saveHighscore() {
         initials: initials
       };
   
-      // save to localstorage
+      // save to localstorage testing indcates + (checked and is logging to local storage)
       highscores.push(newScore);
       window.localStorage.setItem("highscores", JSON.stringify(highscores));
   
       // redirect to next page
-      window.location.href = "highScore.html";
+      window.location.href = "index.html";
     }
   }
 
@@ -164,6 +163,7 @@ function saveHighscore() {
     }
   }
   
+
   // user clicks button to submit initials
   submitBtn.onclick = saveHighscore;
   
@@ -171,3 +171,6 @@ function saveHighscore() {
   startBtn.onclick = startQuiz;
   
   initialsEl.onkeyup = checkForEnter;
+
+ 
+  

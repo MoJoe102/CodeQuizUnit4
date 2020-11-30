@@ -5,10 +5,12 @@ body{
 }
 
 section{
-    background-color: rgb(185, 65, 65);
+    color: rgba(76, 153, 25, 0.918);
     border: dotted 2px black;
     padding: 20px;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-image: url(./images/62683326887__C320C527-6898-4730-9F4D-0D0A554D7620.JPG);
+    background-attachment: fixed;
 }
 .hide {
     display: none;
@@ -30,6 +32,7 @@ p{
     display: block;
     margin: 0 auto;
     font-family: cursive;
+    background-color: rgb(155, 103, 36);
 }
 
 .choice{
